@@ -1,0 +1,18 @@
+<?php 
+if (!empty($class->messages['errors'])  && is_array($class->messages['errors'])) {
+?>
+<div class="alert alert-danger" role="alert">
+  <h4>Errors:</h4>
+  <?php
+    foreach ($class->messages['errors'] as $msg) {
+      if(is_string($msg)){
+        echo "- " . $msg . "<br>";
+      }else{
+        var_dump($msg);
+      }
+    }
+?>
+</div>
+<?php
+  $class->messages['errors'] = [];
+}

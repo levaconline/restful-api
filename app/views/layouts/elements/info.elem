@@ -1,0 +1,14 @@
+<?php
+if (!empty($class->messages['info'])  && is_array($class->messages['info'])) {
+?>
+<div class="alert alert-info" role="alert">
+  <h4>Info:</h4>
+  <?php
+    foreach ($class->messages['info'] as $msg) {
+        echo "- " . $msg . "<br>";
+    }
+?>
+</div>
+<?php
+  $class->messages['info'] = [];
+}
